@@ -1,0 +1,1100 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Tadawa Company Deck</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap">
+<style>
+/* Layout: a fixed 1920x1080 RTL stage, scaled to fit, with three grounds (mist, ink, teal gradient) that alternate like the source deck. */
+@font-face{font-family:"Madani Arabic";src:url("fonts/MadaniArabic-Regular.ttf") format("truetype");font-weight:300 500;font-display:swap}
+@font-face{font-family:"Madani Arabic";src:url("fonts/MadaniArabic-Bold.ttf") format("truetype");font-weight:600 900;font-display:swap}
+:root{
+  --ink:#231f20; --ink-2:#231f20; --ink-card:#2e2a2b; --ink-600:#5b5658; --ink-400:#8b8789;
+  --teal:#0e8098; --teal-deep:#115e6d; --teal-50:#eef6f8; --teal-100:#dcedf1; --teal-200:#b4dae3; --teal-300:#7fbfcd; --teal-glow:#7fbfcd; --teal-400:#3f9eb2;
+  --mist-100:#f2f3f6; --mist-200:#e6e8ee; --mist-400:#d0d4dd; --white:#ffffff; --board:#0d0d0d;
+  --danger:#c2413a; --danger-bg:#fbe9e7; --danger-line:#f1c4bf;
+  --on-brand-muted:rgba(255,255,255,.78); --line-on-brand:rgba(255,255,255,.28);
+  --gradient:linear-gradient(135deg,#0e8098 0%,#115e6d 100%);
+  --ar:"Madani Arabic","Alexandria","Noto Sans Arabic",sans-serif;
+  --lat:"Readex Pro","Segoe UI",system-ui,sans-serif;
+  --ease-lux:cubic-bezier(.77,0,.18,1); --ease-out:cubic-bezier(.22,1,.36,1);
+  --r-lg:24px; --r-xl:32px; --shadow-2:0 2px 6px rgba(35,31,32,.06),0 8px 24px rgba(17,94,109,.08); --shadow-3:0 8px 20px rgba(35,31,32,.08),0 24px 48px rgba(17,94,109,.14);
+  color-scheme:dark;
+}
+html,body{height:100%}
+body{margin:0;background:var(--board);color:var(--ink);overflow:hidden;font-family:var(--ar);-webkit-font-smoothing:antialiased;padding-left:max(0px,env(safe-area-inset-left,0px));padding-right:max(0px,env(safe-area-inset-right,0px))}
+.viewport{position:fixed;inset:0;display:grid;place-items:center;overflow:hidden;background:var(--board)}
+.stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:0 0;overflow:hidden;border-radius:6px;background:var(--mist-100)}
+.slide{position:absolute;inset:0;visibility:hidden;direction:rtl;overflow:hidden}
+.slide.on{visibility:visible;z-index:2}
+.slide.off{visibility:visible;z-index:1}
+.light{background:var(--mist-100);color:var(--ink)}
+.dark{background:var(--ink-2);color:var(--white)}
+.brand{background:var(--gradient);color:var(--white)}
+.pad{position:absolute;inset:0;padding:132px 128px 120px}
+.num,.lat{font-family:var(--lat)}
+.lat{direction:ltr;unicode-bidi:isolate}
+/* type */
+.eyebrow{font-size:28px;font-weight:700;color:var(--teal);margin:0 0 22px;line-height:1.3}
+.dark .eyebrow{color:var(--teal-glow)}
+.brand .eyebrow{color:var(--on-brand-muted)}
+h1,h2,h3{margin:0;text-wrap:balance}
+h2{font-size:76px;font-weight:700;line-height:1.25}
+h2 em{font-style:normal;color:var(--teal)}
+.dark h2 em{color:var(--teal-glow)}
+.lead{font-size:33px;line-height:1.7;color:var(--ink-600);max-width:1500px;margin:30px 0 0}
+.dark .lead{color:rgba(255,255,255,.72)}
+.brand .lead{color:var(--on-brand-muted)}
+.foot{position:absolute;bottom:48px;inset-inline:128px;display:flex;justify-content:space-between;align-items:center;direction:rtl;pointer-events:none}
+.foot img{height:54px}
+.foot .pg{font-family:var(--lat);font-size:24px;color:var(--ink-400);letter-spacing:.06em}
+.dark .foot .pg,.brand .foot .pg{color:rgba(255,255,255,.55)}
+.ic{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+/* cards */
+.card{background:var(--white);border:1.5px solid var(--mist-200);border-radius:var(--r-lg);padding:40px 44px;box-shadow:var(--shadow-2)}
+.dark .card{background:var(--ink-card);border-color:rgba(255,255,255,.06);box-shadow:none}
+.brand .card:not(.hero){color:var(--ink)}
+.card.hero{background:var(--gradient);color:var(--white);border-color:transparent;box-shadow:var(--shadow-3)}
+.card h3{font-size:38px;font-weight:700;line-height:1.35}
+.card p{font-size:28px;line-height:1.7;margin:12px 0 0;color:var(--ink-600)}
+.dark .card p{color:rgba(255,255,255,.7)}
+.card.hero p{color:var(--on-brand-muted)}
+.icbox{width:84px;height:84px;border-radius:22px;display:grid;place-items:center;font-size:44px;background:var(--teal-50);color:var(--teal);margin-bottom:26px}
+.card.hero .icbox{background:rgba(255,255,255,.16);color:var(--white)}
+.dark .icbox{background:rgba(79,184,208,.12);color:var(--teal-glow)}
+/* stats */
+.stats{display:grid;gap:28px;margin-top:70px}
+.stat{padding:44px 48px;border-radius:var(--r-lg)}
+.stat .v{font-family:var(--lat);font-weight:700;font-size:118px;line-height:1;color:var(--teal);direction:ltr;text-align:right;letter-spacing:-.01em}
+.stat .k{font-size:34px;margin-top:22px;color:var(--ink-600)}
+.light .stat{background:var(--white);border:1.5px solid var(--mist-200);box-shadow:var(--shadow-1, 0 1px 2px rgba(35,31,32,.06))}
+.dark .stat{position:relative;background:var(--ink-card);border-top:6px solid var(--teal)}
+.dark .stat .v{color:var(--teal-glow)}
+.dark .stat .k{color:rgba(255,255,255,.86)}
+.stat.hero{background:var(--gradient)!important;border:0!important}
+.stat.hero .v,.stat.hero .k{color:var(--white)!important}
+/* pulse motif */
+.pulse{position:absolute;pointer-events:none}
+.pulse path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+/* steps list */
+.steps{display:flex;flex-direction:column;gap:22px;margin-top:64px}
+.step{display:flex;align-items:center;gap:28px;background:var(--white);border:1.5px solid var(--mist-200);border-radius:22px;padding:18px 30px;font-size:32px}
+.step .n{width:60px;height:60px;border-radius:50%;background:var(--teal);color:var(--white);display:grid;place-items:center;font-family:var(--lat);font-weight:700;font-size:32px;flex:none}
+.step.hl{background:var(--teal);color:var(--white);border-color:var(--teal);box-shadow:var(--shadow-3)}
+.step.hl .n{background:var(--white);color:var(--teal)}
+.tip{display:flex;gap:22px;align-items:center;background:var(--teal-50);color:var(--teal-deep);border-radius:22px;padding:24px 32px;font-size:28px;line-height:1.6;margin-top:auto}
+.tip .ic{font-size:40px;color:var(--teal)}
+/* two-column guide slides */
+.split{position:absolute;inset:120px 128px 130px;display:grid;grid-template-columns:1fr 640px;gap:96px;align-items:stretch}
+.split > .txt{display:flex;flex-direction:column;min-width:0}
+.media{position:relative;border-radius:var(--r-xl);background:linear-gradient(180deg,#e3f0f3,#eef6f8);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;padding:40px}
+/* phone */
+.phone{position:relative;background:#141213;border-radius:58px;padding:14px;box-shadow:0 30px 70px rgba(17,94,109,.28),0 8px 20px rgba(0,0,0,.18)}
+.phone img{display:block;border-radius:44px;width:100%}
+.phone::after{content:"";position:absolute;top:24px;left:50%;width:120px;height:32px;margin-left:-60px;border-radius:20px;background:#141213}
+.phone.noisland::after{display:none}
+/* video card */
+.vid{position:relative;display:block;border-radius:40px;overflow:hidden;text-decoration:none;color:var(--white);box-shadow:0 30px 70px rgba(17,94,109,.3),0 8px 20px rgba(0,0,0,.16);outline-offset:6px}
+.vid img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease-out)}
+.vid:hover img,.vid:focus-visible img{transform:scale(1.045)}
+.vid::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,52,61,0) 45%,rgba(10,52,61,.78) 100%);z-index:1}
+.vid .play{position:absolute;top:50%;left:50%;width:132px;height:132px;margin:-66px 0 0 -66px;border-radius:50%;background:rgba(255,255,255,.94);display:grid;place-items:center;z-index:2;color:var(--teal);font-size:52px;transition:transform .6s var(--ease-out),background .4s}
+.vid .play svg{fill:currentColor;stroke:none;margin-left:8px}
+.vid:hover .play,.vid:focus-visible .play{transform:scale(1.08);background:var(--white)}
+.vid .play::after{content:"";position:absolute;inset:-14px;border-radius:50%;border:2px solid rgba(255,255,255,.55);animation:ring 2.8s var(--ease-out) infinite}
+@keyframes ring{0%{transform:scale(.85);opacity:.9}100%{transform:scale(1.35);opacity:0}}
+.vid .cap{position:absolute;bottom:30px;inset-inline:32px;z-index:2;display:flex;justify-content:space-between;align-items:center;font-size:28px;font-weight:700}
+.vid .dur{font-family:var(--lat);font-weight:500;font-size:24px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);padding:8px 18px;border-radius:999px;direction:ltr}
+.vid:focus-visible{outline:4px solid var(--teal)}
+/* chips flow */
+.flow{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.chip{padding:12px 24px;border-radius:999px;background:var(--teal-50);color:var(--teal-deep);font-size:27px;font-weight:700}
+.chip.lead1{background:var(--teal);color:var(--white)}
+.arw{color:var(--teal-300);font-size:30px}
+/* controls */
+.ctrl{position:fixed;bottom:calc(18px + env(safe-area-inset-bottom,0px));left:calc(18px + env(safe-area-inset-left,0px));display:flex;gap:6px;align-items:center;z-index:20;background:rgba(20,18,19,.72);backdrop-filter:saturate(1.2);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:6px;transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
+.ctrl.idle{opacity:0;transform:translateY(8px);pointer-events:none}
+.ctrl button{all:unset;cursor:pointer;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:22px;transition:background .3s}
+.ctrl button:hover{background:rgba(255,255,255,.12)}
+.ctrl button:focus-visible{box-shadow:0 0 0 3px rgba(79,184,208,.7)}
+.ctrl .count{font-family:var(--lat);color:rgba(255,255,255,.85);font-size:14px;letter-spacing:.08em;padding:0 10px;min-width:62px;text-align:center;font-variant-numeric:tabular-nums}
+.bar{position:absolute;bottom:0;right:0;height:5px;background:var(--teal-glow);z-index:5;transition:width 1.1s var(--ease-lux)}
+.wipe{position:absolute;top:0;bottom:0;right:0;width:3px;background:var(--teal-glow);z-index:4;opacity:0;pointer-events:none}
+@media (prefers-reduced-motion:reduce){.vid .play::after{animation:none}.bar{transition:none}}
+</style>
+
+<div class="viewport" id="vp">
+<div class="stage" id="stage">
+
+<!-- 1 Cover -->
+<section class="slide brand" data-title="Cover">
+  <div class="hb" data-peak=".24" data-s="1.7" data-tone="white" style="top:990px"></div>
+  <div class="pad" style="display:flex;flex-direction:column">
+    <img src="img/logo-white.svg" alt="TADAWA تداوىٰ" style="width:470px;align-self:flex-start" data-a>
+    <div style="margin-top:110px">
+      <p class="eyebrow" data-a style="font-weight:500;font-size:32px">تعريف بالشركة · <span class="num">2026</span></p>
+      <h1 data-a style="font-size:124px;line-height:1.3;font-weight:700">طبيبك الخاص<br>أينما كنت</h1>
+    </div>
+    <p data-a style="margin-top:auto;font-size:32px;color:var(--on-brand-muted)">تداوىٰ للرعاية الصحية ذ.م.م · عمّان، الأردن</p>
+  </div>
+</section>
+
+<!-- 2 About -->
+<section class="slide light">
+  <div class="pad">
+    <p class="eyebrow" data-a>عن تداوىٰ</p>
+    <h2 data-a>شريكك في <em>الطبابة عن بعد والرعاية الأولية</em></h2>
+    <p class="lead" data-a>تأسست تداوىٰ عام <span class="num">2022</span>، وهي شركة أردنية لتقنية المعلومات الطبية متخصصة في الطبابة عن بعد والرعاية الصحية الأولية. نؤمن بأن الرعاية عالية الجودة يجب أن تكون <b style="color:var(--teal)">سلسة للمرضى</b> و<b style="color:var(--teal)">عالية الكفاءة للشبكات الصحية</b>، لتجمع بين صحة المريض وقيمة الأعمال.</p>
+    <div class="stats" style="grid-template-columns:repeat(4,1fr);margin-top:80px">
+      <div class="stat" data-a><div class="v">2022</div><div class="k">تأسست في عمّان</div></div>
+      <div class="stat" data-a><div class="v" data-count="40" data-suf="+">40+</div><div class="k">كادر صحي متخصص</div></div>
+      <div class="stat" data-a><div class="v" data-count="15" data-suf="+">15+</div><div class="k">أخصائي طب أسرة</div></div>
+      <div class="stat hero" data-a><div class="v">24/7</div><div class="k">رعاية على مدار الساعة</div></div>
+    </div>
+  </div>
+  <div class="foot"><img src="img/logo-color.svg" alt=""><span class="pg">02</span></div>
+</section>
+
+<!-- 3 Numbers -->
+<section class="slide dark">
+  <div class="hb" data-peak=".42" data-s=".95" data-tone="dark" style="top:205px;left:-40px;right:auto;width:760px"></div>
+  <div class="pad">
+    <p class="eyebrow" data-a>تداوىٰ بالأرقام</p>
+    <h2 data-a>طلب مثبت ونمو كل شهر</h2>
+    <div class="stats" style="grid-template-columns:repeat(3,1fr)">
+      <div class="stat" data-a><div class="v" data-count="6000" data-suf="+">6,000+</div><div class="k">مستخدم نشط مسجل</div></div>
+      <div class="stat" data-a><div class="v" data-count="3500" data-suf="+">3,500+</div><div class="k">استشارة منجزة</div></div>
+      <div class="stat" data-a><div class="v" data-count="15" data-suf="%">15%</div><div class="k">نمو شهري في المستخدمين</div><div class="spark" aria-hidden="true"><i style="--h:22%"></i><i style="--h:30%"></i><i style="--h:38%"></i><i style="--h:50%"></i><i style="--h:62%"></i><i style="--h:78%"></i><i style="--h:100%"></i></div></div>
+      <div class="stat" data-a><div class="v" data-count="10" data-suf="+">10+</div><div class="k">شريك تأمين وإدارة نفقات طبية</div></div>
+      <div class="stat" data-a><div class="v" data-count="2">2</div><div class="k">عيادات ومراكز خاصة بنا</div></div>
+      <div class="stat hero" data-a><div class="v" data-count="5">5</div><div class="k">مراكز طبية شريكة</div></div>
+    </div>
+  </div>
+  <div class="foot"><img src="img/logo-white.svg" alt=""><span class="pg">03</span></div>
+</section>
+
+<!-- 4 Locations -->
+<section class="slide light">
+  <div class="pad">
+    <p class="eyebrow" data-a>المواقع وخطط التوسع</p>
+    <h2 data-a>شبكة متكاملة <em>في جميع أنحاء الأردن</em></h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:70px">
+      <div style="display:flex;flex-direction:column;gap:22px">
+        <p data-a style="margin:0 0 4px;font-size:30px;font-weight:700;color:var(--ink-600)">تواجدنا الحالي</p>
+        <div class="card loc" data-a><span class="pin"><i data-i="home"></i></span><div><h3>عمّان</h3><p>عيادة رعاية أولية متخصصة</p></div></div>
+        <div class="card loc" data-a><span class="pin"><i data-i="home"></i></span><div><h3>الطفيلة</h3><p>مركز طبي متميز</p></div></div>
+        <div class="card loc" data-a><span class="pin"><i data-i="home"></i></span><div><h3>إربد</h3><p>عيادة رعاية أولية شريكة</p></div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:22px">
+        <p data-a style="margin:0 0 4px;font-size:30px;font-weight:700;color:var(--ink-600)">التوسع الاستراتيجي</p>
+        <div class="card loc" data-a><span class="ord num">01</span><div><h3>العقبة</h3><p>إطلاقنا القادم</p></div></div>
+        <div class="card loc" data-a><span class="ord num">02</span><div><h3>الكرك</h3><p>التالية في الخطة</p></div></div>
+        <div class="card loc hero" data-a><span class="ord num">03</span><div><h3>معان والزرقاء وباقي محافظات الأردن</h3><p>شبكة واحدة متكاملة على مستوى المملكة</p></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><img src="img/logo-color.svg" alt=""><span class="pg">04</span></div>
+</section>
+
+<!-- 5 Two journeys -->
+<section class="slide light">
+  <div class="pad">
+    <p class="eyebrow" data-a>المشكلة التي نحلها</p>
+    <h2 data-a>رحلتان للمريض</h2>
+    <div class="journey bad" data-a>
+      <div class="jhead"><span><i data-i="alert"></i> اليوم: مسار مشتت</span><small>تكلفة أعلى · تجربة أسوأ</small></div>
+      <div class="jrow"><div class="jb">البحث في جوجل</div><i data-i="arrow" class="ja"></i><div class="jb">الطبيب المختص</div><i data-i="arrow" class="ja"></i><div class="jb">المختبر والأشعة</div><i data-i="arrow" class="ja"></i><div class="jb">المستشفى</div></div>
+    </div>
+    <div class="journey good" data-a>
+      <div class="jhead"><span>مع تداوىٰ: رحلة موجّهة</span><small>تكلفة أقل · نتائج أفضل</small></div>
+      <div class="jrow"><div class="jb main"><i data-i="check"></i><div><b>طبيب الأسرة أولاً</b><span>معظم الحالات تُحل هنا</span></div></div><i data-i="arrow" class="ja"></i><div class="jb"><div><b>الطبيب المختص</b><span>الحالات المعقدة</span></div></div><i data-i="arrow" class="ja"></i><div class="jb"><div><b>المستشفى</b><span>عند الحاجة فقط</span></div></div></div>
+    </div>
+  </div>
+  <div class="foot"><img src="img/logo-color.svg" alt=""><span class="pg">05</span></div>
+</section>
+
+<!-- 6 Primary care -->
+<section class="slide light">
+  <div class="pad">
+    <p class="eyebrow" data-a>الرعاية الأولية</p>
+    <h2 data-a><em>نقطة التواصل الأولى</em> لصحتك وعافيتك</h2>
+    <p class="lead" data-a>الرعاية الأولية هي المستوى الأساسي للرعاية الصحية: دعم طبي متاح وشامل ومستمر للأفراد والعائلات.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:70px">
+      <div class="card" data-a><span class="bignum num">01</span><h3>الرعاية الوقائية</h3><p>فحوصات دورية وكشف مبكر ومتابعة صحية استباقية لاكتشاف المشكلات قبل بدايتها.</p></div>
+      <div class="card" data-a><span class="bignum num">02</span><h3>علاج شامل</h3><p>تشخيص وعلاج الأمراض الحادة والمشكلات الصحية اليومية.</p></div>
+      <div class="card" data-a><span class="bignum num">03</span><h3>إدارة الأمراض المزمنة</h3><p>خطط رعاية مستمرة للحالات طويلة الأمد تحمي جودة الحياة وتمنع المضاعفات.</p></div>
+    </div>
+  </div>
+  <div class="foot"><img src="img/logo-color.svg" alt=""><span class="pg">06</span></div>
+</section>
+
+<!-- 7 80% -->
+<section class="slide brand">
+  <div class="hb" data-peak=".62" data-s="1" data-tone="white" style="top:985px"></div>
+  <div class="pad" style="display:grid;grid-template-columns:1fr 600px;gap:100px;align-items:center;padding-top:100px;padding-bottom:150px">
+    <div>
+      <p class="eyebrow" data-a style="font-size:30px">قوة الرعاية الأولية</p>
+      <p data-a style="font-size:62px;font-weight:700;line-height:1.45;margin:0">من الاحتياجات الصحية يمكن التعامل معها في الرعاية الأولية مع مسار التحويل الصحيح.</p>
+      <p data-a class="lead" style="max-width:1000px">عندما يكون طبيب الأسرة المحطة الأولى، تُحل معظم المشكلات بسرعة وبجزء بسيط من تكلفة الطبيب المختص والمستشفى.</p>
+    </div>
+    <div class="donut" data-a>
+      <svg viewBox="0 0 200 200" aria-hidden="true"><circle class="trk" cx="100" cy="100" r="86"/><circle class="arc" cx="100" cy="100" r="86" data-pct="80"/></svg>
+      <div class="dv"><span class="num" data-count="80" data-suf="%">80%</span><small>رعاية أولية</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 Telemedicine -->
+<section class="slide dark">
+  <div class="pad">
+    <p class="eyebrow" data-a>الطبابة عن بعد</p>
+    <h2 data-a>رعاية عالية الجودة، أينما كنت.</h2>
+    <p class="lead" data-a>استشارات عالية الجودة عبر هاتفك الذكي، مع أطباء أسرة يعرفون تاريخك الصحي.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:44px;margin-top:100px">
+      <div class="feat" data-a><i data-i="zap"></i><h3>وصول فوري</h3><p>رعاية عالية الجودة لحظة حاجتك إليها، دون غرفة انتظار.</p></div>
+      <div class="feat" data-a><i data-i="check"></i><h3>تجربة سلسة</h3><p>رحلة رقمية بسيطة من الحجز إلى المتابعة.</p></div>
+      <div class="feat" data-a><i data-i="globe"></i><h3>أي جهاز، في أي مكان</h3><p>متوافق مع جميع أجهزة <span class="lat">iOS</span> وأندرويد، استشر طبيبك في المنزل أو المكتب أو حتى خارج البلاد.</p></div>
+      <div class="feat" data-a><i data-i="calendar"></i><h3>لكل احتياج</h3><p>فحوصات دورية واستشارات تخصصية وإعادة صرف الوصفات.</p></div>
+    </div>
+  </div>
+  <div class="foot"><img src="img/logo-white.svg" alt=""><span class="pg">08</span></div>
+</section>
+
+<!-- 9 Tadawa + primary care -->
+<section class="slide brand">
+  <div class="hb" data-peak=".2" data-s="1.2" data-tone="white" style="top:930px"></div>
+  <div class="pad">
+    <p class="eyebrow" data-a>تداوىٰ + الرعاية الأولية</p>
+    <h2 data-a>طبيب أسرتك، متاح دائماً.</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:90px">
+      <div class="card" data-a><div class="icbox"><i data-i="clock"></i></div><h3>متاح دائماً</h3><p>استشارة ودعم طبي متخصص في أي ساعة من الليل أو النهار.</p></div>
+      <div class="card" data-a><div class="icbox"><i data-i="globe"></i></div><h3>رعاية في أي مكان</h3><p>تواصل مع طبيب أسرتك من المنزل أو المكتب أو حتى أثناء السفر.</p></div>
+      <div class="card" data-a><div class="icbox"><i data-i="shield"></i></div><h3>راحة بال فورية</h3><p>تجاوز غرفة الانتظار واحصل على إجابات سريعة وموثوقة لحظة ظهور القلق.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span></span><span class="pg">09</span></div>
+</section>
+
+<!-- 10 Doctors -->
+<section class="slide dark">
+  <div class="pad">
+    <p class="eyebrow" data-a>أطباؤنا وجودة الرعاية</p>
+    <h2 data-a>رعاية بقيادة أخصائيين، على مدار الساعة</h2>
+    <div style="display:grid;grid-template-columns:460px 1fr;gap:90px;margin-top:90px;align-items:center">
+      <div class="stat hero" data-a style="padding:70px 56px;text-align:center"><div class="v" style="font-size:190px;text-align:center" data-count="15" data-suf="+">15+</div><div class="k" style="font-size:38px;font-weight:700">أخصائي طب أسرة</div></div>
+      <div class="qgrid" data-a>
+        <div><h3>أخصائيون</h3><p>أخصائيو طب الأسرة يقودون خطط الرعاية طويلة الأمد.</p></div>
+        <div><h3>تغطية بالمناوبات <span class="num">24/7</span></h3><p>أطباء مناوبون على مدار الساعة، كل يوم من أيام السنة.</p></div>
+        <div><h3>سير عمل موثّق</h3><p>كل وصفة وتحويل مسجّل ومرتبط باستشارة.</p></div>
+        <div><h3>سجلات مترابطة</h3><p>ربط مع منظومة حكيم بالإضافة إلى سجلنا الطبي الإلكتروني، بسرية تامة.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><img src="img/logo-white.svg" alt=""><span class="pg">10</span></div>
+</section>
+
+<!-- 11 How it works -->
+<section class="slide light">
+  <div class="pad">
+    <p class="eyebrow" data-a>كيف نعمل</p>
+    <h2 data-a>من العَرَض إلى العلاج <em>في خمس خطوات</em></h2>
+    <div class="howrow">
+      <svg class="howline" viewBox="0 0 1664 10" preserveAspectRatio="none" data-draw><path d="M1509 5 H155" stroke="var(--teal-200)" stroke-width="4"/></svg><span class="travel" aria-hidden="true"></span>
+      <div class="how" data-a><span class="dot num">1</span><h3>افتح التطبيق</h3><p>سجّل الدخول إلى تداوىٰ من هاتفك.</p></div>
+      <div class="how" data-a><span class="dot num">2</span><h3>اضغط عالجني الآن أو احجز استشارة عن بعد</h3><p>اطلب الرعاية في أي وقت، ليلاً أو نهاراً.</p></div>
+      <div class="how key" data-a><span class="dot num">3</span><h3>قابل طبيب الأسرة</h3><p>صوت وصورة</p></div>
+      <div class="how" data-a><span class="dot num">4</span><h3>احصل على ما تحتاجه</h3><p>وصفة طبية، إجازة مرضية، طلب فحوصات.</p></div>
+      <div class="how" data-a><span class="dot num">5</span><h3>المتابعة</h3><p>خطة الرعاية والسجلات تبقى في التطبيق.</p></div>
+    </div>
+    <div class="refer" data-a><b>التحويل إلى طبيب مختص</b><span>عند الحاجة، ثم يعود المريض إلى طبيب الأسرة للمتابعة</span></div>
+    <div class="tip" data-a style="margin-top:34px"><i data-i="home"></i>تحتاج إلى زيارة حضورية؟ احجز زيارة عيادة أو زيارة منزلية من التطبيق نفسه.</div>
+  </div>
+  <div class="foot"><img src="img/logo-color.svg" alt=""><span class="pg">11</span></div>
+</section>
+
+<!-- 12 App -->
+<section class="slide light">
+  <div class="split" style="grid-template-columns:1fr 520px;inset-block:110px 120px">
+    <div class="txt">
+      <p class="eyebrow" data-a>تطبيق تداوىٰ</p>
+      <h2 data-a>الرعاية الأولية <em>في جيبك</em></h2>
+      <p class="lead" data-a>منصة رعاية صحية رقمية شاملة توفر وصولاً على مدار الساعة إلى الرعاية الأولية وأطباء أسرة معتمدين، وتربط بين الطب الحضوري والطب عن بعد.</p>
+      <div class="steps" style="margin-top:46px">
+        <div class="step" data-a><i data-i="message" style="font-size:40px;color:var(--teal)"></i>استشارات فيديو فورية</div>
+        <div class="step" data-a><i data-i="clock" style="font-size:40px;color:var(--teal)"></i>استشارات عن بعد بموعد مسبق</div>
+        <div class="step" data-a><i data-i="home" style="font-size:40px;color:var(--teal)"></i>مواعيد حضورية في العيادة</div>
+        <div class="step" data-a><i data-i="db" style="font-size:40px;color:var(--teal)"></i>سجل طبي كامل على هاتفك</div>
+      </div>
+    </div>
+    <div style="display:grid;place-items:center" data-a data-float><div data-tilt class="phone noisland" style="width:420px"><img src="img/home.jpg" alt="الشاشة الرئيسية لتطبيق تداوىٰ"></div></div>
+  </div>
+  <div class="foot"><img src="img/logo-color.svg" alt=""><span class="pg">12</span></div>
+</section>
+
+<!-- 13 Care plan -->
+<section class="slide light">
+  <div class="hb" data-peak=".5" data-s="1.1" data-tone="teal" style="top:540px;left:128px;right:auto;width:1664px"></div>
+  <div class="pad">
+    <p class="eyebrow" data-a>خطة الرعاية · جواز سفر صحي رقمي شامل</p>
+    <h2 data-a>خطة شخصية، <em>تتابعها مع طبيبك</em></h2>
+    <div class="c13" style="display:grid;grid-template-columns:repeat(3,1fr);gap:30px;position:absolute;top:585px;inset-inline:128px">
+      <div class="card" data-a><div class="icbox"><i data-i="bulb"></i></div><h3>إرشاد مخصص</h3><p>خطط صحية خطوة بخطوة مصممة وفق احتياجاتك الطبية ونمط حياتك.</p></div>
+      <div class="card" data-a><div class="icbox"><i data-i="bars"></i></div><h3>متابعة مستمرة</h3><p>تابع تقدمك مع طبيبك مع كل مرحلة من خطة رعايتك.</p></div>
+      <div class="card hero" data-a><div class="icbox"><i data-i="check"></i></div><h3>دعم استباقي</h3><p>مراجعات منتظمة وتوجيه متخصص مستمر يبقيان أهدافك الصحية على المسار.</p></div>
+    </div>
+  </div>
+  <div class="foot"><img src="img/logo-color.svg" alt=""><span class="pg">13</span></div>
+</section>
+
+<!-- 14 Guide cover -->
+<section class="slide brand">
+  <div class="hb" data-peak=".24" data-s="1.7" data-tone="white" style="top:990px"></div>
+  <div class="pad" style="display:flex;flex-direction:column">
+    <img src="img/logo-white.svg" alt="TADAWA تداوىٰ" style="width:420px;align-self:flex-start" data-a>
+    <div style="margin-top:110px">
+      <p class="eyebrow" data-a style="font-weight:500;font-size:32px">دليل استخدام التطبيق</p>
+      <h1 data-a style="font-size:104px;line-height:1.25;font-weight:700">استخدام تطبيق تداوىٰ،<br>خطوة بخطوة.</h1>
+    </div>
+    <p data-a style="margin-top:auto;font-size:32px;color:var(--on-brand-muted)">التسجيل · العائلة والتأمين · حجز الرعاية · صحتي</p>
+  </div>
+</section>
+
+<!-- 15 Home tour -->
+<section class="slide light">
+  <div class="pad" style="padding-top:110px">
+    <p class="eyebrow" data-a>جولة في الشاشة الرئيسية</p>
+    <h2 data-a>كل شيء يبدأ <em>من هنا</em></h2>
+  </div>
+  <div class="tour">
+    <div class="tcol">
+      <div class="tc" data-a data-hot="1"><span class="tn num">1</span><div><b>قائمة اسمك</b><span>التبديل بين ملفات العائلة أو إضافتها</span></div></div>
+      <div class="tc" data-a data-hot="2"><span class="tn num">2</span><div><b>الإعدادات</b><span>أضف بطاقة التأمين</span></div></div>
+      <div class="tc hl" data-a data-hot="3"><span class="tn num">3</span><div><b>عالجني الآن</b><span>طبيب أسرة عند الطلب، الآن</span></div></div>
+      <div class="tc" data-a data-hot="4"><span class="tn num">4</span><div><b>زيارة العيادة</b><span>احجز طبيب أسرتك في العيادة</span></div></div>
+      <div class="tc" data-a data-hot="5"><span class="tn num">5</span><div><b>استشارة عن بعد</b><span>احجز طبيب أسرتك بالفيديو</span></div></div>
+    </div>
+    <div class="tphone" data-a>
+      <div data-tilt class="phone noisland" style="width:296px"><img src="img/home.jpg" alt="الشاشة الرئيسية لتطبيق تداوىٰ">
+        <span class="hot num" style="left:36%;top:7%">1</span>
+        <span class="hot num" style="left:91%;top:7.5%">2</span>
+        <span class="hot num" style="left:18%;top:24.5%">3</span>
+        <span class="hot num" style="left:49%;top:24.5%">4</span>
+        <span class="hot num" style="left:82%;top:24.5%">5</span>
+        <span class="hot num" style="left:50%;top:68%">6</span>
+        <span class="hot num" style="left:37%;top:96%">7</span>
+        <span class="hot num" style="left:62%;top:96%">8</span>
+        <span class="hot num" style="left:87%;top:96%">9</span>
+      </div>
+    </div>
+    <div class="tcol">
+      <div class="tc" data-a data-hot="6"><span class="tn num">6</span><div><b>خدمات الأطباء المختصين</b><span>أطباء مختصون في العيادة، بالفيديو، في المنزل</span></div></div>
+      <div class="tc" data-a data-hot="7"><span class="tn num">7</span><div><b>تبويب تداوىٰ</b><span>التقارير والوصفات الطبية</span></div></div>
+      <div class="tc" data-a data-hot="8"><span class="tn num">8</span><div><b>تبويب الخطة الصحية</b><span>خطتك وخطوات الرعاية القادمة</span></div></div>
+      <div class="tc hl" data-a data-hot="9"><span class="tn num">9</span><div><b>تبويب صحتي</b><span>المواعيد والأدوية والمؤشرات الحيوية</span></div></div>
+    </div>
+  </div>
+  <div class="foot"><img src="img/logo-color.svg" alt=""><span class="pg">15</span></div>
+</section>
+
+<!-- 16 Create account -->
+<section class="slide light">
+  <div class="split" style="grid-template-columns:1fr 470px">
+    <div class="txt">
+      <p class="eyebrow" data-a>إنشاء حساب</p>
+      <h2 data-a>ست خطوات <em>لحساب موثّق</em></h2>
+      <div class="sgrid" style="margin-top:56px">
+        <div class="scard" data-a><span class="n num">1</span><h3>التحميل</h3><p>ثبّت تداوىٰ من <span class="lat">App Store</span> أو <span class="lat">Google Play</span> وافتحه.</p></div>
+        <div class="scard" data-a><span class="n num">2</span><h3>إنشاء حساب جديد</h3><p>اضغط إنشاء حساب جديد لبدء التسجيل.</p></div>
+        <div class="scard" data-a><span class="n num">3</span><h3>التعريف</h3><p>رقم الهاتف مع الرقم الوطني أو رقم جواز السفر، وإضافة رمز بطاقة عضوية المتحدون.</p></div>
+        <div class="scard" data-a><span class="n num">4</span><h3>كلمة المرور</h3><p>اختر كلمة مرور آمنة تطابق الشروط.</p></div>
+        <div class="scard" data-a><span class="n num">5</span><h3>البيانات الشخصية</h3><p>تاريخ الميلاد والبريد الإلكتروني والجنس.</p></div>
+        <div class="scard hl" data-a><span class="n num">6</span><h3>التحقق</h3><p>أدخل رمز التحقق المرسل عبر واتساب.</p></div>
+      </div>
+    </div>
+    <a class="vid" data-tilt data-a href="https://drive.google.com/file/d/1hnQ_3Z8DfuFQHLu7ROpCwIiPVPcYumMI/view" target="_blank" rel="noopener"><img src="img/vid1.jpg" alt="لقطة من فيديو إنشاء حساب"><span class="play"><i data-i="play"></i></span><span class="cap">شاهد الشرح<span class="dur">0:41</span></span></a>
+  </div>
+  <div class="foot"><img src="img/logo-color.svg" alt=""><span class="pg">16</span></div>
+</section>
+
+<!-- 17 Family -->
+<section class="slide light">
+  <div class="split" style="grid-template-columns:1fr 470px">
+    <div class="txt">
+      <p class="eyebrow" data-a>الحسابات الفرعية للعائلة</p>
+      <h2 data-a>تطبيق واحد، <em>للعائلة كلها</em></h2>
+      <div class="steps">
+        <div class="step" data-a><span class="n">1</span>اضغط على اسمك أعلى الشاشة الرئيسية</div>
+        <div class="step" data-a><span class="n">2</span>اختر إضافة حساب جديد</div>
+        <div class="step" data-a><span class="n">3</span>أدخل المعلومات المطلوبة واحفظ</div>
+        <div class="step hl" data-a><span class="n">4</span>يظهر الفرد تحت الحساب الرئيسي</div>
+      </div>
+      <div class="tip" data-a><i data-i="bulb"></i>لا حاجة لرقم هاتف. يرتبط الحساب الفرعي تلقائياً برقم هاتف الحساب الرئيسي.</div>
+    </div>
+    <a class="vid" data-tilt data-a href="https://drive.google.com/file/d/1e3LD-oS25C5jE2hj_1iFSqB-TL6CQakS/view" target="_blank" rel="noopener"><img src="img/vid2.jpg" alt="لقطة من فيديو حسابات العائلة"><span class="play"><i data-i="play"></i></span><span class="cap">شاهد الشرح<span class="dur">0:41</span></span></a>
+  </div>
+  <div class="foot"><img src="img/logo-color.svg" alt=""><span class="pg">17</span></div>
+</section>
+
+<!-- 18 Treat me -->
+<section class="slide light">
+  <div class="split" style="grid-template-columns:1fr 470px">
+    <div class="txt">
+      <p class="eyebrow" data-a>عالجني الآن</p>
+      <h2 data-a>طبيب الأسرة، <em>الآن</em></h2>
+      <div class="steps">
+        <div class="step" data-a><span class="n">1</span>اضغط عالجني الآن في الشاشة الرئيسية</div>
+        <div class="step" data-a><span class="n">2</span>راجع طلبك وأرسله</div>
+        <div class="step" data-a><span class="n">3</span>انتظر لحظات حتى ينضم طبيب الأسرة</div>
+        <div class="step hl" data-a><span class="n">4</span>تحدث مع الطبيب في استشارة فيديو</div>
+      </div>
+      <div class="tip" data-a><i data-i="bulb"></i>لم ينضم الطبيب؟ حاول الاتصال مرة أخرى. يُعوَّض المريض بالكامل بزيارة بديلة.</div>
+    </div>
+    <a class="vid" data-tilt data-a href="https://drive.google.com/file/d/1JD2AR2Jp9QgbRxMFa0i5GnlrHL20nu_o/view" target="_blank" rel="noopener"><img src="img/vid6.jpg" alt="لقطة من فيديو عالجني الآن: استشارة فيديو مع الطبيب"><span class="play"><i data-i="play"></i></span><span class="cap">شاهد الشرح<span class="dur">0:32</span></span></a>
+  </div>
+  <div class="foot"><img src="img/logo-color.svg" alt=""><span class="pg">18</span></div>
+</section>
+
+<!-- 19 Remote consult -->
+<section class="slide light">
+  <div class="split" style="grid-template-columns:1fr 470px">
+    <div class="txt">
+      <p class="eyebrow" data-a>استشارة عن بعد</p>
+      <h2 data-a>قابل طبيبك <em>بالفيديو</em></h2>
+      <div class="steps">
+        <div class="step" data-a><span class="n">1</span>اضغط استشارة عن بعد واختر التخصص</div>
+        <div class="step" data-a><span class="n">2</span>اختر طبيبك واضغط الذهاب إلى المواعيد</div>
+        <div class="step" data-a><span class="n">3</span>اختر التاريخ والوقت؛ يتم التأكيد فوراً</div>
+        <div class="step hl" data-a><span class="n">4</span>قابل طبيبك بالفيديو في الموعد المحجوز</div>
+      </div>
+      <div class="tip" data-a><i data-i="bulb"></i>الأنسب للاحتياجات غير الطارئة والفحوصات الدورية والمتابعات. لا تنقّل ولا غرفة انتظار.</div>
+    </div>
+    <a class="vid" data-tilt data-a href="https://drive.google.com/file/d/12us4YE80VFDCmiVJliXvf1xfXKWeHGHv/view" target="_blank" rel="noopener"><img src="img/vid5.jpg" alt="لقطة من فيديو حجز زيارة: اختيار الموعد"><span class="play"><i data-i="play"></i></span><span class="cap">طريقة الحجز<span class="dur">0:30</span></span></a>
+  </div>
+  <div class="foot"><img src="img/logo-color.svg" alt=""><span class="pg">19</span></div>
+</section>
+
+<!-- 20 Clinic visit -->
+<section class="slide light">
+  <div class="split" style="grid-template-columns:1fr 470px">
+    <div class="txt">
+      <p class="eyebrow" data-a>زيارة العيادة</p>
+      <h2 data-a>طبيب أسرتك، <em>في العيادة</em></h2>
+      <div class="steps">
+        <div class="step" data-a><span class="n">1</span>اضغط زيارة العيادة واختر التخصص</div>
+        <div class="step" data-a><span class="n">2</span>اختر طبيبك واضغط الذهاب إلى المواعيد</div>
+        <div class="step" data-a><span class="n">3</span>اختر التاريخ والوقت المناسبين لك</div>
+        <div class="step hl" data-a><span class="n">4</span>يتم تأكيد الحجز فوراً</div>
+      </div>
+      <div class="tip" data-a><i data-i="bulb"></i>تغيّرت خططك؟ ألغِ الموعد أو غيّره مجاناً قبل الزيارة بساعتين على الأقل.</div>
+    </div>
+    <div class="media" data-a><div data-tilt class="phone noisland" style="width:320px"><img src="img/clinic.jpg" alt="شاشة حجز زيارة العيادة"></div><span class="mcap">الخطوة <span class="num">3</span>: اختر التاريخ والوقت</span></div>
+  </div>
+  <div class="foot"><img src="img/logo-color.svg" alt=""><span class="pg">20</span></div>
+</section>
+
+<!-- 21 Tadawa tab -->
+<section class="slide light">
+  <div class="split" style="grid-template-columns:1fr 470px">
+    <div class="txt">
+      <p class="eyebrow" data-a>تبويب تداوىٰ</p>
+      <h2 data-a>التقارير والوصفات، <em>بعد كل زيارة</em></h2>
+      <div class="steps">
+        <div class="step" data-a><span class="n">1</span>اضغط تداوىٰ في الشريط السفلي</div>
+        <div class="step" data-a><span class="n">2</span>اختر حالة مكتملة</div>
+        <div class="step" data-a><span class="n">3</span>اختر الطبيب الذي راجعته</div>
+        <div class="step hl" data-a><span class="n">4</span>افتح الاستشارة لعرض التقرير والوصفة</div>
+      </div>
+      <div class="tip" data-a><i data-i="bulb"></i>طريق آخر: صحتي، ثم نتائج الفحوصات، ثم الاستشارات المكتملة.</div>
+    </div>
+    <div class="media" data-a><img src="img/tadawa-tab.jpg" alt="تبويب تداوىٰ: الاستشارات حسب الطبيب" style="width:330px;border-radius:40px;box-shadow:var(--shadow-3)"><span class="mcap">الاستشارات حسب الطبيب</span></div>
+  </div>
+  <div class="foot"><img src="img/logo-color.svg" alt=""><span class="pg">21</span></div>
+</section>
+
+<!-- 22 Care plan tab -->
+<section class="slide light">
+  <div class="split" style="grid-template-columns:1fr 600px">
+    <div class="txt">
+      <p class="eyebrow" data-a>تبويب الخطة الصحية</p>
+      <h2 data-a>خطتك، <em>خطوة بخطوة</em></h2>
+      <div class="steps">
+        <div class="step" data-a><span class="n">1</span>اضغط الخطة الصحية في الشريط السفلي</div>
+        <div class="step" data-a><span class="n">2</span>اطّلع على خطتك الصحية</div>
+        <div class="step" data-a><span class="n">3</span>اتبع خطوات الرعاية الموصى بها</div>
+        <div class="step hl" data-a><span class="n">4</span>تابع تقدمك مع طبيبك</div>
+      </div>
+      <div class="tip" data-a><i data-i="bulb"></i>موجودة أيضاً في صحتي: خطة الرعاية بجانب المواعيد والأدوية ونتائج الفحوصات.</div>
+    </div>
+    <div class="poster" data-a><img src="img/poster-careplan.jpg" alt="أين أجد خطة الرعاية الخاصة بي داخل تطبيق تداوىٰ"></div>
+  </div>
+  <div class="foot"><img src="img/logo-color.svg" alt=""><span class="pg">22</span></div>
+</section>
+
+<!-- 23 My health -->
+<section class="slide light">
+  <div class="split" style="grid-template-columns:1fr 440px">
+    <div class="txt">
+      <p class="eyebrow" data-a>تبويب صحتي</p>
+      <h2 data-a>سجلك الصحي، <em>بضغطة واحدة</em></h2>
+      <div class="sgrid" style="margin-top:56px">
+        <div class="scard hl" data-a><span class="n num">1</span><h3>افتح صحتي</h3><p>اضغط صحتي، آخر تبويب في الشريط السفلي.</p></div>
+        <div class="scard" data-a><span class="n num">2</span><h3>المواعيد</h3><p>الزيارات المكتملة والملغاة والقادمة.</p></div>
+        <div class="scard" data-a><span class="n num">3</span><h3>الأدوية</h3><p>الوصفات السابقة والحالية. فعّل التذكيرات.</p></div>
+        <div class="scard" data-a><span class="n num">4</span><h3>نتائج الفحوصات</h3><p>جميع نتائج المختبر والتشخيص في مكان واحد.</p></div>
+        <div class="scard" data-a><span class="n num">5</span><h3>المطاعيم والحساسية</h3><p>سجل المطاعيم الكامل وكل حساسية مسجلة.</p></div>
+        <div class="scard" data-a><span class="n num">6</span><h3>المؤشرات الحيوية</h3><p>حدّث وتابع ثمانية قياسات.</p></div>
+      </div>
+    </div>
+    <a class="vid" data-tilt data-a href="https://drive.google.com/file/d/1B2BD874ryJAN4H2ZbqM3THHpYfALqRJC/view" target="_blank" rel="noopener"><img src="img/vid7.jpg" alt="لقطة من فيديو أين أجد مواعيدي"><span class="play"><i data-i="play"></i></span><span class="cap">أين أجد مواعيدي<span class="dur">0:20</span></span></a>
+  </div>
+  <div class="foot"><img src="img/logo-color.svg" alt=""><span class="pg">23</span></div>
+</section>
+
+<!-- 24 Vitals -->
+<section class="slide light">
+  <div class="split" style="grid-template-columns:1fr 440px">
+    <div class="txt">
+      <p class="eyebrow" data-a>المؤشرات الحيوية</p>
+      <h2 data-a>صحتك <em>ليست رقماً واحداً</em></h2>
+      <p class="lead" data-a>صحتي، ثم المؤشرات الحيوية. يحدّث المرضى ثمانية قياسات ويتابعونها ليرى طبيبهم الاتجاه وليس لقطة واحدة.</p>
+      <div class="vitals">
+        <span data-a>الطول</span><span data-a>الوزن</span><span data-a>الحرارة</span><span data-a>نبض القلب</span>
+        <span data-a>ضغط الدم</span><span data-a>نسبة الأكسجين</span><span data-a>معدل التنفس</span><span data-a>سكر الدم</span>
+      </div>
+      <div class="tip" data-a><i data-i="bars"></i>حدّث مؤشراتك الحيوية بانتظام ليبقى سجلك الصحي محدّثاً وتُكتشف التغيرات مبكراً.</div>
+    </div>
+    <a class="vid" data-tilt data-a href="https://drive.google.com/file/d/1vFGrMpAOO_IrmSFRG_hYapjMbq8Km8Pq/view" target="_blank" rel="noopener"><img src="img/vid8.jpg" alt="لقطة من فيديو المؤشرات الحيوية"><span class="play"><i data-i="play"></i></span><span class="cap">شاهد الشرح<span class="dur">0:31</span></span></a>
+  </div>
+  <div class="foot"><img src="img/logo-color.svg" alt=""><span class="pg">24</span></div>
+</section>
+
+<!-- 25 Health map -->
+<section class="slide light">
+  <div class="pad">
+    <p class="eyebrow" data-a>خريطة صحتي</p>
+    <h2 data-a>سجل صحي كامل <em>في تبويب واحد</em></h2>
+    <div class="map">
+      <div class="mt" data-a><span class="mi"><i data-i="clock"></i></span><div><b>المواعيد</b><span>مكتملة، ملغاة، قادمة</span></div></div>
+      <div class="mt" data-a><span class="mi"><i data-i="pill"></i></span><div><b>الأدوية</b><span>السجل الكامل مع التذكيرات</span></div></div>
+      <div class="mt" data-a><span class="mi"><i data-i="book"></i></span><div><b>خطة الرعاية</b><span>خطوات الرعاية الموصى بها</span></div></div>
+      <div class="mt" data-a><span class="mi"><i data-i="search"></i></span><div><b>نتائج الفحوصات</b><span>نتائج المختبر والتشخيص</span></div></div>
+      <div class="mt center" data-a><span class="rip"></span><span class="rip r2"></span><span class="rip r3"></span><b>صحتي</b><span class="lat">My Health</span></div>
+      <div class="mt" data-a><span class="mi"><i data-i="shield"></i></span><div><b>المطاعيم</b><span>كل مطعوم تم أخذه</span></div></div>
+      <div class="mt" data-a><span class="mi"><i data-i="alert"></i></span><div><b>الحساسية</b><span>لقرارات علاجية أكثر أماناً</span></div></div>
+      <div class="mt" data-a><span class="mi"><i data-i="activity"></i></span><div><b>المؤشرات الحيوية</b><span>ثمانية قياسات متابَعة</span></div></div>
+      <div class="mt soft" data-a><span class="mi"><i data-i="file"></i></span><div><b>التقارير</b><span>الوصفات عبر تبويب تداوىٰ</span></div></div>
+    </div>
+  </div>
+  <div class="foot"><img src="img/logo-color.svg" alt=""><span class="pg">25</span></div>
+</section>
+
+<!-- 26 Insurance -->
+<section class="slide light">
+  <div class="split" style="grid-template-columns:1fr 440px">
+    <div class="txt">
+      <p class="eyebrow" data-a>بطاقة التأمين</p>
+      <h2 data-a>أضفها مرة واحدة، <em>وكن من المشمولين</em></h2>
+      <div class="flow" style="margin-top:64px" data-a><span class="chip lead1">الإعدادات</span><i data-i="arrow" class="arw"></i><span class="chip lead1">التأمين</span><i data-i="arrow" class="arw"></i><span class="chip">أدخل البيانات</span></div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px">
+        <div class="card ins" data-a><div class="icbox"><i data-i="check"></i></div><h3>اسم شركة التأمين</h3></div>
+        <div class="card ins" data-a><div class="icbox"><i data-i="key"></i></div><h3>رقم بطاقة التأمين</h3></div>
+        <div class="card ins" data-a><div class="icbox"><i data-i="clock"></i></div><h3>تاريخ الانتهاء</h3></div>
+      </div>
+      <div class="tip" data-a><i data-i="search"></i>عند الحجز، فعّل خيار التأمين ليعرض التطبيق الأطباء المشمولين بتأمينك فقط.</div>
+    </div>
+    <a class="vid" data-tilt data-a href="https://drive.google.com/file/d/1aiqVf7-JOlD-dp-fuXXQEzPzVGSmMbvR/view" target="_blank" rel="noopener"><img src="img/vid4.jpg" alt="لقطة من فيديو التأمين: شركات التأمين المشمولة"><span class="play"><i data-i="play"></i></span><span class="cap">شاهد الشرح<span class="dur">0:16</span></span></a>
+  </div>
+  <div class="foot"><img src="img/logo-color.svg" alt=""><span class="pg">26</span></div>
+</section>
+
+<!-- 27 Video library -->
+<section class="slide light">
+  <div class="pad" style="padding-top:104px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px">
+      <div><p class="eyebrow" data-a>مكتبة فيديوهات الشرح</p><h2 data-a>شاهد <em>كل خطوة</em></h2></div>
+      <div class="flow" data-a style="margin-bottom:12px"><span class="chip"><span class="num">8</span> فيديوهات باللغة العربية</span><span class="chip lead1">المجموع: حوالي <span class="num">4</span> دقائق</span></div>
+    </div>
+    <div class="lib">
+      <a class="li" data-a href="https://drive.google.com/file/d/1hnQ_3Z8DfuFQHLu7ROpCwIiPVPcYumMI/view" target="_blank" rel="noopener"><span class="vid lv"><img src="img/vid1.jpg" alt=""><span class="play"><i data-i="play"></i></span></span><span class="lt"><small class="num">01</small><b>إنشاء حساب</b><span class="dur2"><i data-i="clock"></i><span class="num">0:41</span></span></span></a>
+      <a class="li" data-a href="https://drive.google.com/file/d/1e3LD-oS25C5jE2hj_1iFSqB-TL6CQakS/view" target="_blank" rel="noopener"><span class="vid lv"><img src="img/vid2.jpg" alt=""><span class="play"><i data-i="play"></i></span></span><span class="lt"><small class="num">02</small><b>حسابات العائلة</b><span class="dur2"><i data-i="clock"></i><span class="num">0:41</span></span></span></a>
+      <a class="li" data-a href="https://drive.google.com/file/d/18A2YVFHbrwLjR7uyP93h5MBY-7Xj9UUZ/view" target="_blank" rel="noopener"><span class="vid lv"><img src="img/vid3.jpg" alt=""><span class="play"><i data-i="play"></i></span></span><span class="lt"><small class="num">03</small><b>استعادة كلمة المرور</b><span class="dur2"><i data-i="clock"></i><span class="num">0:32</span></span></span></a>
+      <a class="li" data-a href="https://drive.google.com/file/d/1aiqVf7-JOlD-dp-fuXXQEzPzVGSmMbvR/view" target="_blank" rel="noopener"><span class="vid lv"><img src="img/vid4.jpg" alt=""><span class="play"><i data-i="play"></i></span></span><span class="lt"><small class="num">04</small><b>التأمين</b><span class="dur2"><i data-i="clock"></i><span class="num">0:16</span></span></span></a>
+      <a class="li" data-a href="https://drive.google.com/file/d/12us4YE80VFDCmiVJliXvf1xfXKWeHGHv/view" target="_blank" rel="noopener"><span class="vid lv"><img src="img/vid5.jpg" alt=""><span class="play"><i data-i="play"></i></span></span><span class="lt"><small class="num">05</small><b>حجز زيارة</b><span class="dur2"><i data-i="clock"></i><span class="num">0:30</span></span></span></a>
+      <a class="li" data-a href="https://drive.google.com/file/d/1JD2AR2Jp9QgbRxMFa0i5GnlrHL20nu_o/view" target="_blank" rel="noopener"><span class="vid lv"><img src="img/vid6.jpg" alt=""><span class="play"><i data-i="play"></i></span></span><span class="lt"><small class="num">06</small><b>عالجني الآن</b><span class="dur2"><i data-i="clock"></i><span class="num">0:32</span></span></span></a>
+      <a class="li" data-a href="https://drive.google.com/file/d/1B2BD874ryJAN4H2ZbqM3THHpYfALqRJC/view" target="_blank" rel="noopener"><span class="vid lv"><img src="img/vid7.jpg" alt=""><span class="play"><i data-i="play"></i></span></span><span class="lt"><small class="num">07</small><b>أين أجد مواعيدي</b><span class="dur2"><i data-i="clock"></i><span class="num">0:20</span></span></span></a>
+      <a class="li" data-a href="https://drive.google.com/file/d/1vFGrMpAOO_IrmSFRG_hYapjMbq8Km8Pq/view" target="_blank" rel="noopener"><span class="vid lv"><img src="img/vid8.jpg" alt=""><span class="play"><i data-i="play"></i></span></span><span class="lt"><small class="num">08</small><b>المؤشرات الحيوية</b><span class="dur2"><i data-i="clock"></i><span class="num">0:31</span></span></span></a>
+    </div>
+  </div>
+  <div class="foot"><img src="img/logo-color.svg" alt=""><span class="pg">27</span></div>
+</section>
+
+<!-- 28 FAQ -->
+<section class="slide light">
+  <div class="split" style="grid-template-columns:1fr 500px">
+    <div class="txt">
+      <p class="eyebrow" data-a>السؤال الأكثر تكراراً</p>
+      <h2 data-a>أين أجد <em>تقريري أو وصفتي؟</em></h2>
+      <div style="margin-top:70px;display:flex;flex-direction:column;gap:56px">
+        <div data-a><p class="way"><span class="n num">1</span>الطريق الأول</p><div class="flow"><span class="chip lead1">تداوىٰ</span><i data-i="arrow" class="arw"></i><span class="chip">مكتملة</span><i data-i="arrow" class="arw"></i><span class="chip">طبيبك</span><i data-i="arrow" class="arw"></i><span class="chip">الاستشارة</span></div></div>
+        <div data-a><p class="way"><span class="n num">2</span>الطريق الثاني</p><div class="flow"><span class="chip lead1">صحتي</span><i data-i="arrow" class="arw"></i><span class="chip">نتائج الفحوصات</span><i data-i="arrow" class="arw"></i><span class="chip">مكتملة</span><i data-i="arrow" class="arw"></i><span class="chip">طبيبك</span><i data-i="arrow" class="arw"></i><span class="chip">الاستشارة</span></div></div>
+      </div>
+      <div class="tip" data-a><i data-i="bulb"></i>سهلة الحفظ: التبويب، مكتملة، الطبيب، الاستشارة.</div>
+    </div>
+    <div class="poster" data-a><img src="img/poster-reports.jpg" alt="أين أجد تقاريري الطبية ووصفاتي بعد الاستشارة"></div>
+  </div>
+  <div class="foot"><img src="img/logo-color.svg" alt=""><span class="pg">28</span></div>
+</section>
+
+<!-- 29 Meds and labs -->
+<section class="slide light">
+  <div class="pad">
+    <p class="eyebrow" data-a>الاستخدام اليومي</p>
+    <h2 data-a>الأدوية، <em>المختبر والأشعة</em></h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:64px">
+      <div class="card daily" data-a><img src="img/poster-meds.jpg" alt="أين أجد أدويتي داخل تطبيق تداوىٰ"><div><div class="icbox"><i data-i="pill"></i></div><h3>الأدوية</h3><p>السجل الكامل للوصفات السابقة والحالية في صحتي.</p><span class="pill">فعّل الإشعارات لتذكيرك بمواعيد الجرعات</span></div></div>
+      <div class="card daily" data-a><img src="img/poster-lab.jpg" alt="نتائج فحوصاتك دائماً بين يديك"><div><div class="icbox"><i data-i="search"></i></div><h3>المختبر والأشعة</h3><p>جميع نتائج المختبر والتشخيص في مكان واحد، ضمن صحتي، نتائج الفحوصات.</p><span class="pill">يشرح لك طبيبك النتائج</span></div></div>
+    </div>
+  </div>
+  <div class="foot"><img src="img/logo-color.svg" alt=""><span class="pg">29</span></div>
+</section>
+
+<!-- 30 Close -->
+<section class="slide dark">
+  <div class="hb" data-peak=".42" data-s="1.2" data-tone="dark" style="top:840px"></div>
+  <div class="pad" style="display:grid;grid-template-columns:1fr 520px;gap:80px;align-items:center;padding-top:96px;padding-bottom:330px">
+    <div>
+      <img src="img/logo-white.svg" alt="TADAWA تداوىٰ" style="width:520px" data-a>
+      <p data-a style="font-size:56px;font-weight:700;color:var(--teal-glow);margin:60px 0 0">تداوىٰ… طبيبك الخاص أينما كنت</p>
+    </div>
+    <div class="qr" data-a><img src="img/qr.png" alt="رمز QR لتحميل تطبيق تداوىٰ"><b>حمّل تطبيق تداوىٰ</b><span class="lat">App Store · Google Play</span></div>
+  </div>
+  <div class="contact" data-a><b>عماد عمار</b> · مدير تطوير الأعمال<br><span class="lat">imad.ammar@tadawa.com · 079 3113 991</span></div>
+</section>
+
+<div class="curtain" id="curtain" aria-hidden="true"><div class="hb" data-peak=".5" data-s="2.2" data-tone="white" data-static style="top:600px"></div></div>
+<div class="bar" id="bar"></div>
+<div class="wipe" id="wipe"></div>
+</div>
+</div>
+
+<nav class="ctrl" id="ctrl" aria-label="التنقل بين الشرائح">
+  <button id="fs" title="ملء الشاشة" aria-label="ملء الشاشة"><i data-i="max"></i></button>
+  <button id="next" title="التالية" aria-label="الشريحة التالية"><i data-i="left"></i></button>
+  <span class="count" id="count">1 / 30</span>
+  <button id="prev" title="السابقة" aria-label="الشريحة السابقة"><i data-i="right"></i></button>
+</nav>
+
+<style>
+/* slide-specific pieces */
+.loc{display:flex;align-items:center;gap:30px;padding:30px 40px}
+.loc h3{font-size:36px}.loc p{margin-top:4px;font-size:27px}
+.loc > .ic{font-size:44px;color:var(--teal)}
+.ord{font-size:36px;font-weight:700;color:var(--teal);min-width:60px}
+.loc.hero .ord{color:var(--white)}
+.journey{border-radius:var(--r-lg);padding:36px 44px;margin-top:44px}
+.journey.bad{background:#fdf4f3;border:1.5px solid var(--danger-line)}
+.journey.good{background:var(--white);border:2.5px solid var(--teal);box-shadow:var(--shadow-3)}
+.jhead{display:flex;justify-content:space-between;align-items:center;font-size:38px;font-weight:700;margin-bottom:28px}
+.jhead span{display:flex;gap:16px;align-items:center}
+.bad .jhead{color:var(--danger)} .good .jhead{color:var(--teal)}
+.jhead small{font-size:26px}
+.jrow{display:flex;align-items:stretch;gap:26px}
+.jb{flex:1;display:flex;align-items:center;justify-content:center;gap:20px;border-radius:18px;padding:26px 24px;font-size:32px;text-align:center}
+.bad .jb{background:#f8dcd8;color:#8e2f29}
+.good .jb{background:var(--teal-50);color:var(--teal-deep);justify-content:flex-start;text-align:start}
+.good .jb.main{background:var(--teal);color:var(--white);flex:1.3}
+.good .jb.main .ic{font-size:52px}
+.jb b{display:block;font-size:34px}.jb span{display:block;font-size:26px;opacity:.85;margin-top:4px}
+.ja{font-size:40px;align-self:center}
+.bad .ja{color:#e3a29b}.good .ja{color:var(--teal)}
+.bignum{display:block;font-size:56px;color:var(--teal);margin-bottom:22px}
+.feat{border-top:4px solid var(--teal);padding-top:40px}
+.feat > .ic{font-size:52px;color:var(--teal-glow)}
+.feat h3{font-size:38px;margin-top:26px}
+.feat p{font-size:28px;line-height:1.7;color:rgba(255,255,255,.72);margin:14px 0 0}
+.qgrid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.qgrid > div{padding:40px 44px;border-top:3px solid var(--teal)}
+.qgrid h3{font-size:38px}
+.qgrid p{font-size:28px;line-height:1.7;color:rgba(255,255,255,.72);margin:12px 0 0}
+.howrow{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:28px;margin-top:64px}
+.howline{position:absolute;top:56px;inset-inline:0;width:100%;height:10px}
+.how{position:relative;text-align:center}
+.how .dot{width:112px;height:112px;margin:0 auto 34px;border-radius:50%;border:3px solid var(--teal);background:var(--mist-100);color:var(--teal);font-size:48px;font-weight:700;display:grid;place-items:center}
+.how.key .dot{background:var(--teal);color:var(--white);box-shadow:0 0 0 12px rgba(14,128,152,.12)}
+.how h3{font-size:33px;line-height:1.45}
+.how p{font-size:26px;line-height:1.6;color:var(--ink-600);margin:10px 0 0}
+.refer{margin:34px auto 0;width:fit-content;border:2.5px dashed var(--teal);border-radius:22px;padding:22px 40px;text-align:center;font-size:28px;color:var(--ink-600);background:var(--white)}
+.refer b{display:block;color:var(--teal-deep);font-size:32px}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.scard{background:var(--white);border:1.5px solid var(--mist-200);border-radius:var(--r-lg);padding:30px 32px}
+.scard .n{width:58px;height:58px;border-radius:50%;background:var(--teal);color:var(--white);display:grid;place-items:center;font-weight:700;font-size:28px;margin-bottom:18px}
+.scard h3{font-size:32px}
+.scard p{font-size:25px;line-height:1.6;color:var(--ink-600);margin:8px 0 0}
+.scard.hl{background:var(--gradient);border-color:transparent;color:var(--white);box-shadow:var(--shadow-3)}
+.scard.hl .n{background:var(--white);color:var(--teal)}
+.scard.hl p{color:var(--on-brand-muted)}
+.split .steps{margin-top:44px;margin-bottom:32px;gap:18px}
+.split .vid{align-self:center;aspect-ratio:9/16;width:100%;max-height:100%}
+.split .vid img{height:100%}
+.mcap{font-size:26px;font-weight:700;color:var(--teal-deep);background:var(--white);padding:14px 30px;border-radius:999px;box-shadow:var(--shadow-2)}
+.poster{align-self:center;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-3)}
+.poster img{display:block;width:100%}
+.vitals{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:56px 0 40px}
+.vitals span{background:var(--white);border:1.5px solid var(--mist-200);border-radius:20px;padding:26px 28px;font-size:30px;font-weight:700;color:var(--teal-deep)}
+.map{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:58px}
+.mt{display:flex;align-items:center;gap:28px;background:var(--white);border:1.5px solid var(--mist-200);border-radius:var(--r-lg);padding:32px 38px}
+.mt b{display:block;font-size:34px}.mt span{display:block;font-size:26px;color:var(--ink-600);margin-top:4px}
+.mi{width:76px;height:76px;border-radius:20px;background:var(--teal-50);color:var(--teal);display:grid;place-items:center;font-size:40px;flex:none;margin:0!important}
+.mt.center{background:var(--gradient);border:0;color:var(--white);flex-direction:column;justify-content:center;gap:6px;box-shadow:var(--shadow-3)}
+.mt.center b{font-size:52px}.mt.center span{color:var(--on-brand-muted);font-size:30px}
+.mt.soft{background:var(--teal-50);border-color:var(--teal-100)}
+.ins{padding:34px}.ins h3{font-size:31px}
+.lib{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:52px}
+.li{display:flex;gap:24px;align-items:center;background:var(--white);border:1.5px solid var(--mist-200);border-radius:var(--r-lg);padding:16px;text-decoration:none;color:var(--ink);transition:transform .7s var(--ease-out),box-shadow .7s var(--ease-out),border-color .5s}
+.li:hover,.li:focus-visible{transform:translateY(-3px);box-shadow:var(--shadow-3);border-color:var(--teal-200);outline:none}
+.li:focus-visible{box-shadow:0 0 0 4px rgba(14,128,152,.35)}
+.lv{flex:none;width:150px;aspect-ratio:9/16;border-radius:16px;box-shadow:none}
+.lv::before{background:rgba(10,52,61,.12)}
+.lv img{height:100%}
+.li:hover .lv img{transform:scale(1.06)}
+.lv .play{width:58px;height:58px;margin:-29px 0 0 -29px;font-size:24px}
+.lv .play::after{inset:-8px}
+.lt{display:flex;flex-direction:column;gap:6px;min-width:0}
+.lt small{font-size:22px;color:var(--teal);font-weight:700}
+.lt b{font-size:30px;line-height:1.35}
+.dur2{display:flex;align-items:center;gap:8px;font-size:22px;color:var(--ink-600);margin-top:6px}
+.dur2 .ic{font-size:22px;color:var(--teal)}
+.way{display:flex;align-items:center;gap:18px;font-size:32px;font-weight:700;margin:0 0 22px;color:var(--ink-600)}
+.way .n{width:54px;height:54px;border-radius:50%;background:var(--teal);color:var(--white);display:grid;place-items:center;font-size:26px}
+.daily{display:grid;grid-template-columns:330px 1fr;gap:40px;align-items:center;padding:36px}
+.daily img{border-radius:20px;display:block;width:100%}
+.daily .icbox{width:72px;height:72px;font-size:38px;margin-bottom:20px}
+.daily h3{font-size:44px}.daily p{font-size:29px}
+.pill{display:inline-block;margin-top:26px;background:var(--teal-50);color:var(--teal-deep);font-size:27px;font-weight:700;padding:16px 26px;border-radius:18px;line-height:1.5}
+.tour{position:absolute;top:290px;bottom:110px;inset-inline:128px;display:grid;grid-template-columns:1fr 420px 1fr;gap:56px;align-items:center}
+.tcol{display:flex;flex-direction:column;gap:18px}
+.tc{display:flex;align-items:center;gap:20px;background:var(--white);border:1.5px solid var(--mist-200);border-radius:20px;padding:16px 24px;transition:transform .6s var(--ease-out),box-shadow .6s var(--ease-out),background .4s}
+.tc b{display:block;font-size:28px}.tc span{display:block;font-size:22px;color:var(--ink-600);margin-top:2px}
+.tn{width:48px;height:48px;border-radius:50%;background:var(--teal-50);color:var(--teal);display:grid;place-items:center;font-weight:700;font-size:24px;flex:none}
+.tc.hl{background:var(--teal);border-color:var(--teal);color:var(--white)}
+.tc.hl span{color:var(--on-brand-muted)}.tc.hl .tn{background:var(--white)}
+.tc.lit{transform:translateY(-3px);box-shadow:var(--shadow-3)}
+.tphone{display:grid;place-items:center}
+.hot{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:var(--teal);color:var(--white);border:3px solid var(--white);display:grid;place-items:center;font-weight:700;font-size:20px;box-shadow:0 4px 14px rgba(17,94,109,.35);transition:transform .5s var(--ease-out)}
+.hot.lit{transform:scale(1.3)}
+.phone .hot{z-index:2}
+.qr{background:var(--white);color:var(--ink);border-radius:var(--r-xl);padding:44px;display:flex;flex-direction:column;align-items:center;gap:14px;box-shadow:0 30px 80px rgba(14,128,152,.25)}
+.qr img{width:330px;display:block}
+.qr b{font-size:38px;margin-top:12px}.qr span{font-size:24px;color:var(--ink-600)}
+.contact{position:absolute;bottom:64px;right:128px;font-size:30px;line-height:1.8;color:rgba(255,255,255,.72);text-align:right}
+.contact b{color:var(--white)}
+.contact .lat{font-size:26px;letter-spacing:.03em;color:rgba(255,255,255,.6)}
+
+/* heartbeat: the Tadawa pulse, drawn from the brand asset geometry */
+.hb{position:absolute;left:0;right:0;height:0;pointer-events:none;z-index:0}
+.hb svg{position:absolute;left:0;overflow:visible}
+.hb path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.slide .pad,.slide .split,.slide .tour{z-index:1}
+/* donut */
+.donut{position:relative;width:560px;height:560px;justify-self:center}
+.donut svg{width:100%;height:100%;transform:rotate(-90deg)}
+.donut circle{fill:none;stroke-width:14}
+.donut .trk{stroke:rgba(255,255,255,.18)}
+.donut .arc{stroke:var(--white);stroke-linecap:round}
+.donut .dv{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.donut .dv .num{font-size:178px;font-weight:700;line-height:1;direction:ltr}
+.donut .dv small{font-size:32px;color:var(--on-brand-muted)}
+/* growth bars */
+.spark{position:absolute;left:44px;top:52px;display:flex;align-items:flex-end;gap:9px;height:96px}
+.spark i{display:block;width:16px;height:var(--h);border-radius:6px 6px 2px 2px;background:linear-gradient(180deg,var(--teal-glow),var(--teal));transform-origin:bottom}
+.slide.on .spark i{animation:grow 1s var(--ease-out) backwards}
+.slide.on .spark i:nth-child(2){animation-delay:.08s}.slide.on .spark i:nth-child(3){animation-delay:.16s}.slide.on .spark i:nth-child(4){animation-delay:.24s}.slide.on .spark i:nth-child(5){animation-delay:.32s}.slide.on .spark i:nth-child(6){animation-delay:.4s}.slide.on .spark i:nth-child(7){animation-delay:.48s}
+.slide.on .spark{animation:none}
+@keyframes grow{from{transform:scaleY(0)}}
+/* map pins */
+.pin{position:relative;display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:var(--teal-50);color:var(--teal);font-size:34px;flex:none}
+.pin::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--teal);opacity:0;animation:ping 2.6s var(--ease-out) infinite}
+.loc:nth-child(3) .pin::after{animation-delay:.6s}.loc:nth-child(4) .pin::after{animation-delay:1.2s}
+@keyframes ping{0%{transform:scale(.9);opacity:.6}100%{transform:scale(1.7);opacity:0}}
+/* travelling pulse on the steps line */
+.travel{position:absolute;top:49px;right:143px;width:24px;height:24px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 8px rgba(14,128,152,.16);animation:travel 5.5s cubic-bezier(.65,0,.35,1) infinite}
+@keyframes travel{0%{transform:translateX(0);opacity:0}8%{opacity:1}88%{opacity:1}100%{transform:translateX(-1354px);opacity:0}}
+.how.key .dot{animation:beat 2.2s var(--ease-out) infinite}
+@keyframes beat{0%,100%{box-shadow:0 0 0 0 rgba(14,128,152,.28)}40%{box-shadow:0 0 0 22px rgba(14,128,152,0)}}
+/* journey arrows drift toward the next step */
+.good .ja{animation:nudge 1.8s ease-in-out infinite}
+@keyframes nudge{50%{transform:translateX(-8px)}}
+/* telemedicine feature rules draw in */
+.feat{position:relative;border-top-color:transparent}
+.feat::before{content:"";position:absolute;top:-4px;right:0;left:0;height:4px;background:var(--teal);transform-origin:right}
+.slide.on .feat::before{animation:rule 1.2s var(--ease-lux) .5s backwards}
+.slide.on .feat:nth-child(2)::before{animation-delay:.65s}.slide.on .feat:nth-child(3)::before{animation-delay:.8s}.slide.on .feat:nth-child(4)::before{animation-delay:.95s}
+@keyframes rule{from{transform:scaleX(0)}}
+/* ripples in the health map centre */
+.mt.center{position:relative;overflow:hidden;isolation:isolate}
+.rip{position:absolute;left:50%;top:50%;width:260px;height:260px;margin:-130px 0 0 -130px;border-radius:50%;border:2px solid rgba(255,255,255,.35);z-index:-1;animation:ripple 3.6s var(--ease-out) infinite}
+.rip.r2{animation-delay:1.2s}.rip.r3{animation-delay:2.4s}
+@keyframes ripple{0%{transform:scale(.3);opacity:1}100%{transform:scale(2.2);opacity:0}}
+/* curtain transition */
+.curtain{position:absolute;inset:0;z-index:8;background:var(--gradient);transform:translateX(105%);pointer-events:none;overflow:hidden}
+[data-tilt]{transition:transform .9s var(--ease-out);will-change:transform}
+@media (prefers-reduced-motion:reduce){.pin::after,.travel,.how.key .dot,.good .ja,.rip,.slide.on .spark i,.slide.on .feat::before{animation:none!important}.travel{display:none}}
+
+.c13 .card{padding:30px 38px}.c13 .icbox{width:70px;height:70px;font-size:36px;margin-bottom:16px}.c13 .card p{font-size:26px}
+[data-float]{animation:float 7s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-14px)}}
+@media (prefers-reduced-motion:reduce){[data-float]{animation:none}}
+</style>
+
+<script>
+(function(){
+  var I={
+    home:'<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/>',
+    clock:'<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
+    pill:'<path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/>',
+    book:'<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>',
+    shield:'<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>',
+    search:'<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
+    activity:'<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>',
+    alert:'<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/>',
+    file:'<path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/>',
+    db:'<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/>',
+    bulb:'<path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/>',
+    play:'<path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/>',
+    message:'<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>',
+    globe:'<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>',
+    check:'<circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>',
+    zap:'<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>',
+    calendar:'<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>',
+    bars:'<path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/>',
+    key:'<circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/>',
+    arrow:'<path d="M19 12H5"/><path d="m12 19-7-7 7-7"/>',
+    left:'<path d="m15 18-6-6 6-6"/>', right:'<path d="m9 18 6-6-6-6"/>',
+    max:'<path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>'
+  };
+  document.querySelectorAll('i[data-i]').forEach(function(el){
+    var s=document.createElementNS('http://www.w3.org/2000/svg','svg');
+    s.setAttribute('viewBox','0 0 24 24'); s.setAttribute('class','ic '+(el.className||'')); s.setAttribute('aria-hidden','true');
+    s.innerHTML=I[el.dataset.i]||''; if(el.getAttribute('style')) s.setAttribute('style',el.getAttribute('style'));
+    el.replaceWith(s);
+  });
+
+  var NS='http://www.w3.org/2000/svg';
+  var stage=document.getElementById('stage'), slides=[].slice.call(stage.querySelectorAll('.slide')), N=slides.length;
+  var bar=document.getElementById('bar'), wipe=document.getElementById('wipe'), count=document.getElementById('count'), ctrl=document.getElementById('ctrl'), curtain=document.getElementById('curtain');
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cur=-1, anims=[], loops=[], timers=[], pending=null;
+
+  /* ---------- Tadawa heartbeat ----------
+     Geometry taken from the brand pulse asset, oriented as in the logo:
+     baseline, the A peak (with its crossbar), the dip below the line, back to baseline. */
+  var TONES={
+    white:{base:'rgba(255,255,255,.38)',dash:'rgba(255,255,255,.38)',trace:'#ffffff'},
+    dark:{base:'rgba(14,128,152,.62)',dash:'rgba(255,255,255,.55)',trace:'#7fbfcd'},
+    teal:{base:'#0e8098',dash:'#231f20',trace:'#7fbfcd'},
+    faint:{base:'rgba(14,128,152,.16)',dash:'rgba(14,128,152,.16)',trace:'rgba(14,128,152,.7)'},
+    darkfaint:{base:'rgba(127,191,205,.16)',dash:'rgba(127,191,205,.16)',trace:'rgba(127,191,205,.75)'}
+  };
+  function buildHB(el){
+    var s=+el.dataset.s||1, W=el.offsetWidth||1920, P=(+el.dataset.peak||.5)*W, t=TONES[el.dataset.tone]||TONES.white;
+    var up=126*s, dn=44*s, sw=15*s, pad=sw+4, y0=pad+up, H=up+dn+pad*2;
+    var d='M-30 '+y0+' H'+(P-43*s)+' L'+P+' '+(y0-up)+' L'+(P+58*s)+' '+(y0+dn)+' L'+(P+79*s)+' '+y0+' H'+(W+30);
+    var dash='M'+(P-13*s)+' '+(y0-16.6*s)+' H'+(P+6*s);
+    var svg=document.createElementNS(NS,'svg');
+    svg.setAttribute('width',W); svg.setAttribute('height',H); svg.setAttribute('viewBox','0 0 '+W+' '+H);
+    svg.style.top=(-y0)+'px'; svg.setAttribute('aria-hidden','true');
+    function p(dd,c,w){var e=document.createElementNS(NS,'path'); e.setAttribute('d',dd); e.setAttribute('stroke',c); e.setAttribute('stroke-width',w); svg.appendChild(e); return e;}
+    el._base=p(d,t.base,sw); el._dash=p(dash,t.dash,sw); el._trace=p(d,t.trace,sw);
+    el._trace.style.opacity=0;
+    el.appendChild(svg);
+  }
+  // a faint heartbeat runs into the footer logo, the way the line runs through the wordmark
+  slides.forEach(function(sl){
+    if(!sl.querySelector('.foot img')) return;
+    var hb=document.createElement('div'); hb.className='hb';
+    hb.dataset.peak='.12'; hb.dataset.s='.36'; hb.dataset.tone=sl.classList.contains('light')?'faint':'darkfaint';
+    hb.style.cssText='top:1012px;left:210px;right:auto;width:1440px';
+    sl.insertBefore(hb,sl.firstChild);
+  });
+  document.querySelectorAll('.hb').forEach(buildHB);
+
+  function drawHB(el,delay,dur){
+    if(reduce) return;
+    var L=el._base.getTotalLength();
+    el._base.style.strokeDasharray=L;
+    anims.push(el._base.animate([{strokeDashoffset:L},{strokeDashoffset:0}],{duration:dur||1900,delay:delay,easing:'cubic-bezier(.65,0,.35,1)',fill:'backwards'}));
+    anims.push(el._dash.animate([{opacity:0},{opacity:1}],{duration:400,delay:delay+(dur||1900)*.55,fill:'backwards'}));
+  }
+  function traceHB(el,delay){
+    if(reduce) return;
+    var L=el._base.getTotalLength(), seg=Math.min(260,L*.14);
+    var tr=el._trace; tr.style.opacity=1; tr.style.strokeDasharray=seg+' '+(L+seg*2);
+    var dur=Math.max(2600,L/0.75);
+    var a=tr.animate([{strokeDashoffset:seg},{strokeDashoffset:-L,offset:.72},{strokeDashoffset:-L}],{duration:dur,delay:delay,iterations:Infinity,easing:'linear',fill:'backwards'});
+    loops.push(a);
+  }
+  function stopLoops(){loops.forEach(function(a){a.cancel()}); loops=[]; timers.forEach(clearInterval); timers=[]; tourStop&&tourStop();}
+
+  /* ---------- scale stage ---------- */
+  function fit(){
+    var w=innerWidth, h=innerHeight, s=Math.min(w/1920,h/1080);
+    stage.style.transform='translate('+(-960*s)+'px,'+(-540*s)+'px) scale('+s+')';
+    stage.style.borderRadius=(s<.5?0:6)+'px';
+  }
+  addEventListener('resize',fit); fit();
+
+  /* ---------- per-slide motion ---------- */
+  function fmt(n){return n.toLocaleString('en-US')}
+  function countUp(el,delay){
+    if(reduce) return;
+    var t=+el.dataset.count, suf=el.dataset.suf||'', start=null, dur=1600;
+    el.textContent='0'+suf;
+    timers.push(setTimeout(function(){
+      function step(ts){ if(start===null) start=ts; var p=Math.min(1,(ts-start)/dur), e=1-Math.pow(1-p,4);
+        el.textContent=fmt(Math.round(t*e))+suf; if(p<1) requestAnimationFrame(step); }
+      requestAnimationFrame(step);
+    },delay));
+  }
+  function donut(sl,delay){
+    sl.querySelectorAll('.donut .arc').forEach(function(c){
+      var C=2*Math.PI*86, pct=(+c.dataset.pct||0)/100;
+      c.style.strokeDasharray=C; c.style.strokeDashoffset=C*(1-pct);
+      if(!reduce) anims.push(c.animate([{strokeDashoffset:C},{strokeDashoffset:C*(1-pct)}],{duration:1900,delay:delay,easing:'cubic-bezier(.65,0,.35,1)',fill:'backwards'}));
+    });
+  }
+  function lineDraw(sl,delay){
+    sl.querySelectorAll('svg[data-draw] path').forEach(function(p){
+      var L; try{L=p.getTotalLength()}catch(e){return}
+      if(reduce) return;
+      p.style.strokeDasharray=L;
+      anims.push(p.animate([{strokeDashoffset:L},{strokeDashoffset:0}],{duration:1600,delay:delay,easing:'cubic-bezier(.65,0,.35,1)',fill:'backwards'}));
+    });
+  }
+  function reveal(sl,base){
+    if(!reduce){
+      sl.querySelectorAll('[data-a]').forEach(function(el,i){
+        var d=base+Math.min(i,14)*80;
+        anims.push(el.animate([{opacity:0,transform:'translateY(40px)'},{opacity:1,transform:'none'}],{duration:1150,delay:d,easing:'cubic-bezier(.22,1,.36,1)',fill:'backwards'}));
+      });
+    }
+    sl.querySelectorAll('[data-count]').forEach(function(el){countUp(el,base+260)});
+    donut(sl,base+200);
+    lineDraw(sl,base+150);
+    sl.querySelectorAll('.hb').forEach(function(h,i){ drawHB(h,base+i*180); traceHB(h,base+2100+i*300); });
+    if(sl.querySelector('.tour')) tourStart(sl);
+  }
+
+  /* ---------- home tour: walks through the nine hotspots ---------- */
+  var tourStop=null;
+  function tourStart(sl){
+    var cards=[].slice.call(sl.querySelectorAll('.tc[data-hot]')), spots=[].slice.call(sl.querySelectorAll('.hot'));
+    var k=0, paused=false;
+    function show(i){ cards.forEach(function(c){c.classList.toggle('lit',c.dataset.hot==String(i))}); spots.forEach(function(s){s.classList.toggle('lit',s.textContent.trim()==String(i))}); }
+    cards.forEach(function(c){
+      c.onmouseenter=function(){paused=true; show(+c.dataset.hot)};
+      c.onmouseleave=function(){paused=false};
+    });
+    if(reduce) return;
+    var iv=setInterval(function(){ if(paused) return; k=k%9+1; show(k); },1700);
+    timers.push(iv);
+    tourStop=function(){clearInterval(iv); show(0); tourStop=null;};
+  }
+
+  /* ---------- tilt on phones and video cards ---------- */
+  var tiltOn=!reduce && matchMedia('(pointer:fine)').matches;
+  stage.addEventListener('mousemove',function(e){
+    if(!tiltOn||cur<0) return;
+    var r=stage.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+    slides[cur].querySelectorAll('[data-tilt]').forEach(function(el){
+      el.style.transform='perspective(1400px) rotateY('+(x*10)+'deg) rotateX('+(-y*8)+'deg)';
+    });
+  });
+  stage.addEventListener('mouseleave',function(){ if(cur>=0) slides[cur].querySelectorAll('[data-tilt]').forEach(function(el){el.style.transform=''}) });
+
+  /* ---------- transitions ---------- */
+  function ground(sl){return sl.classList.contains('brand')?'brand':sl.classList.contains('dark')?'dark':'light'}
+  function settle(){
+    if(pending){var f=pending; pending=null; f();}
+    anims.forEach(function(a){try{a.finish()}catch(e){}}); anims=[];
+  }
+  function show(n){
+    slides.forEach(function(s,i){s.classList.toggle('on',i===n); s.classList.remove('off')});
+  }
+  function edgeWipe(prev,next,dir){
+    show(slides.indexOf(next)); prev.classList.add('off');
+    var from=dir>0?'inset(0 0 0 100%)':'inset(0 100% 0 0)';
+    anims.push(next.animate([{clipPath:from},{clipPath:'inset(0 0 0 0)'}],{duration:1200,easing:'cubic-bezier(.77,0,.18,1)'}));
+    anims.push(next.animate([{transform:'translateX('+(dir>0?-110:110)+'px) scale(1.035)'},{transform:'none'}],{duration:1500,easing:'cubic-bezier(.22,1,.36,1)'}));
+    var out=prev.animate([{transform:'none',filter:'brightness(1)'},{transform:'translateX('+(dir>0?260:-260)+'px) scale(.95)',filter:'brightness(.5)'}],{duration:1200,easing:'cubic-bezier(.77,0,.18,1)'});
+    out.onfinish=function(){prev.classList.remove('off')};
+    anims.push(out);
+    wipe.style.opacity=1;
+    var w=wipe.animate(dir>0?[{transform:'translateX(0)'},{transform:'translateX(-1923px)'}]:[{transform:'translateX(-1923px)'},{transform:'translateX(0)'}],{duration:1200,easing:'cubic-bezier(.77,0,.18,1)'});
+    w.onfinish=function(){wipe.style.opacity=0};
+    anims.push(w);
+    reveal(next,360);
+  }
+  function curtainT(prev,next,dir){
+    var a=dir>0?'105%':'-105%', b=dir>0?'-105%':'105%';
+    var c=curtain.animate([
+      {transform:'translateX('+a+')',easing:'cubic-bezier(.77,0,.18,1)'},
+      {transform:'translateX(0)',offset:.42},
+      {transform:'translateX(0)',offset:.52,easing:'cubic-bezier(.77,0,.18,1)'},
+      {transform:'translateX('+b+')'}
+    ],{duration:1700});
+    anims.push(c);
+    anims.push(prev.animate([{transform:'none'},{transform:'translateX('+(dir>0?160:-160)+'px) scale(.96)'}],{duration:714,easing:'cubic-bezier(.77,0,.18,1)',fill:'forwards'}));
+    var ch=curtain.querySelector('.hb'); drawHB(ch,120,1050);
+    pending=function(){
+      prev.getAnimations().forEach(function(x){x.cancel()});
+      show(slides.indexOf(next));
+      anims.push(next.animate([{transform:'translateX('+(dir>0?-140:140)+'px) scale(1.04)'},{transform:'none'}],{duration:1400,easing:'cubic-bezier(.22,1,.36,1)'}));
+      reveal(next,260);
+    };
+    var t=setTimeout(function(){ if(pending){var f=pending; pending=null; f();} },714);
+    timers.push(t);
+  }
+  function go(n,dir){
+    n=Math.max(0,Math.min(N-1,n)); if(n===cur) return;
+    if(dir===undefined) dir=n>cur?1:-1;
+    settle(); stopLoops();
+    var prev=slides[cur], next=slides[n];
+    if(!prev){ show(n); reveal(next,150); }
+    else if(reduce){ show(n); anims.push(next.animate([{opacity:0},{opacity:1}],{duration:250})); reveal(next,0); }
+    else if(ground(prev)===ground(next)) edgeWipe(prev,next,dir);
+    else curtainT(prev,next,dir);
+    cur=n;
+    bar.style.width=((n+1)/N*100)+'%';
+    count.textContent=(n+1)+' / '+N;
+    try{history.replaceState(null,'','#slide-'+(n+1))}catch(e){}
+  }
+
+  function fromHash(){var m=/slide-(\d+)/.exec(location.hash);return m?Math.max(0,Math.min(N-1,+m[1]-1)):0}
+  go(fromHash());
+  addEventListener('hashchange',function(){var n=fromHash(); if(n!==cur) go(n)});
+
+  function next(){go(cur+1,1)} function prev(){go(cur-1,-1)}
+  document.getElementById('next').onclick=next;
+  document.getElementById('prev').onclick=prev;
+  document.getElementById('fs').onclick=function(){
+    var d=document; try{ if(d.fullscreenElement) d.exitFullscreen(); else d.documentElement.requestFullscreen().catch(function(){}); }catch(e){}
+  };
+  addEventListener('keydown',function(e){
+    if(e.target.closest&&e.target.closest('a,button')&&(e.key==='Enter'||e.key===' ')) return;
+    if(['ArrowLeft','PageDown',' ','Enter'].indexOf(e.key)>-1){e.preventDefault();next()}
+    else if(['ArrowRight','PageUp','Backspace'].indexOf(e.key)>-1){e.preventDefault();prev()}
+    else if(e.key==='Home'){go(0)} else if(e.key==='End'){go(N-1)}
+    else if(e.key==='f'||e.key==='F'){document.getElementById('fs').click()}
+  });
+  stage.addEventListener('click',function(e){
+    if(e.target.closest('a,button,.tc')) return;
+    var r=stage.getBoundingClientRect(); (e.clientX<r.left+r.width/2)?next():prev();
+  });
+  var sx=null,sy=null; stage.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
+  stage.addEventListener('touchend',function(e){ if(sx===null) return; var dx=e.changedTouches[0].clientX-sx, dy=e.changedTouches[0].clientY-sy; if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)){ dx>0?next():prev(); } sx=null });
+
+  var t; function wake(){ctrl.classList.remove('idle'); clearTimeout(t); t=setTimeout(function(){ctrl.classList.add('idle')},2800)}
+  addEventListener('mousemove',wake); addEventListener('keydown',wake); addEventListener('touchstart',wake,{passive:true}); wake();
+})();
+</script>
+
+</body></html>
