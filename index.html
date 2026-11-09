@@ -1049,7 +1049,6 @@ h2 em{font-style:normal;color:var(--teal)}
   });
   stage.addEventListener('click',function(e){
     if(e.target.closest('a,button,.tc')) return;
-    var r=stage.getBoundingClientRect(); (e.clientX<r.left+r.width/2)?next():prev();
   });
   var sx=null,sy=null; stage.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
   stage.addEventListener('touchend',function(e){ if(sx===null) return; var dx=e.changedTouches[0].clientX-sx, dy=e.changedTouches[0].clientY-sy; if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)){ dx>0?next():prev(); } sx=null });
